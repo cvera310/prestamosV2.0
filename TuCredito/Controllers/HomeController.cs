@@ -15,7 +15,7 @@ namespace TuCredito.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Esta es la pagina de nosotros";
 
             return View();
         }
@@ -26,5 +26,14 @@ namespace TuCredito.Controllers
 
             return View();
         }
+
+        public ActionResult Nosotres()
+        {
+            ViewBag.Message = "Grupo de desarrolladores del sistema TU CREDITO";
+
+            return View();
+        }
+
+
     }
 }
