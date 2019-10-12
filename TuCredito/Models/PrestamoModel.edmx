@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="prestamoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="prestamoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'prestamo.dbo.Cliente' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="Cliente">
@@ -66,6 +66,15 @@ advertencia 6002: La tabla o vista 'prestamo.dbo.Cliente' no tiene definida ning
           <Property Name="cobdet_preid" Type="int" Nullable="false" />
           <Property Name="cobdet_mora" Type="int" Nullable="false" />
           <Property Name="cobdet_dcto" Type="int" />
+        </EntityType>
+        <EntityType Name="Comentario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Comentario" Type="varchar" MaxLength="120" Nullable="false" />
         </EntityType>
         <EntityType Name="forma_pago">
           <Key>
@@ -188,6 +197,7 @@ advertencia 6002: La tabla o vista 'prestamo.dbo.usuario' no tiene definida ning
           <EntitySet Name="cobranza" EntityType="Self.cobranza" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cobranza_cheque" EntityType="Self.cobranza_cheque" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cobranza_detalle" EntityType="Self.cobranza_detalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comentario" EntityType="Self.Comentario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="forma_pago" EntityType="Self.forma_pago" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Informconf" EntityType="Self.Informconf" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="moneda" EntityType="Self.moneda" Schema="dbo" store:Type="Tables" />
@@ -244,8 +254,7 @@ advertencia 6002: La tabla o vista 'prestamo.dbo.usuario' no tiene definida ning
     FROM [dbo].[usuario] AS [usuario]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="prestamoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -434,7 +443,17 @@ advertencia 6002: La tabla o vista 'prestamo.dbo.usuario' no tiene definida ning
           <EntitySet Name="personal" EntityType="Self.personal" />
           <EntitySet Name="Solicitud_Credito" EntityType="Self.Solicitud_Credito" />
           <EntitySet Name="usuario" EntityType="Self.usuario" />
+          <EntitySet Name="Comentario" EntityType="prestamoModel.Comentario" />
         </EntityContainer>
+        <EntityType Name="Comentario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comentario1" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -596,6 +615,16 @@ advertencia 6002: La tabla o vista 'prestamo.dbo.usuario' no tiene definida ning
                 <ScalarProperty Name="usu_clave" ColumnName="usu_clave" />
                 <ScalarProperty Name="usu_nombrecompleto" ColumnName="usu_nombrecompleto" />
                 <ScalarProperty Name="usu_ultacceso" ColumnName="usu_ultacceso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comentario">
+            <EntityTypeMapping TypeName="prestamoModel.Comentario">
+              <MappingFragment StoreEntitySet="Comentario">
+                <ScalarProperty Name="Comentario1" ColumnName="Comentario" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

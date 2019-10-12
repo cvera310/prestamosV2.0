@@ -1,17 +1,50 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Contacto";
 }
 <h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<form class="form-horizontal">
+    <fieldset>
+        
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Nombre</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputEmail" placeholder="Nombre">
+            </div>
+        </div>
+
+      
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Apellido</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputEmail" placeholder="Apellido">
+            </div>
+        </div>
+
+
+        <legend>Pongase en contacto con nostros</legend>
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Comentarios" class="col-lg-2 control-label">Comentarios</label>
+            <div class="col-lg-10">
+                <textarea class="form-control" rows="3" id="Comentarios"></textarea>
+               
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

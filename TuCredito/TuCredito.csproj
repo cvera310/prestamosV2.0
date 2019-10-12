@@ -189,6 +189,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ComentariosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -205,6 +206,9 @@
       <DependentUpon>PrestamoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\cobranza_detalle.cs">
+      <DependentUpon>PrestamoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comentario.cs">
       <DependentUpon>PrestamoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\forma_pago.cs">
@@ -328,6 +332,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Nosotres.cshtml" />
+    <Content Include="Views\Comentarios\Create.cshtml" />
+    <Content Include="Views\Comentarios\Delete.cshtml" />
+    <Content Include="Views\Comentarios\Details.cshtml" />
+    <Content Include="Views\Comentarios\Edit.cshtml" />
+    <Content Include="Views\Comentarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

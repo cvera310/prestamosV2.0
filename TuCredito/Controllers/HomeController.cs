@@ -15,7 +15,7 @@ namespace TuCredito.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Esta es la pagina de nosotros";
+            ViewBag.Message = "C# Avanazado";
 
             return View();
         }
@@ -29,7 +29,7 @@ namespace TuCredito.Controllers
 
         public ActionResult Nosotres()
         {
-            ViewBag.Message = "Grupo de desarrolladores del sistema TU CREDITO";
+            ViewBag.Message = "Nuestro grupo de desarrolladores";
 
             return View();
         }

@@ -38,5 +38,6 @@ namespace TuCredito.Models
         public virtual DbSet<personal> personal { get; set; }
         public virtual DbSet<Solicitud_Credito> Solicitud_Credito { get; set; }
         public virtual DbSet<usuario> usuario { get; set; }
+        public virtual DbSet<Comentario> Comentario { get; set; }
     }
 }
