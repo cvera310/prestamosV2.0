@@ -1,0 +1,58 @@
+﻿@model IEnumerable<TuCredito.Models.Cliente>
+
+@{
+    ViewBag.Title = "Clientes";
+}
+
+<h2>Listado de Clientes</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Cliente", "Index")
+</p>
+<table class="table table-striped table-hover">
+    <tr class="active">
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Documento)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DireccionLaboral)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AntiguedadLaboral)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido)
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Documento)
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DireccionLaboral)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AntiguedadLaboral)
+        </td>
+        
+    </tr>
+}
+
+</table>

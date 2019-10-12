@@ -11,11 +11,15 @@ namespace TuCredito.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Cliente
     {
+
         public int NumeroCliente { get; set; }
+        [Display(Name = "Nombres")]
         public string Nombre { get; set; }
+        [Display(Name = "Apellidos")]
         public string Apellido { get; set; }
         public int TipoDocumento { get; set; }
         public string Documento { get; set; }
@@ -24,8 +28,11 @@ namespace TuCredito.Models
         public System.DateTime Nacimiento { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
+        [Display(Name = "Lugar de trabajo")]
         public string LugarTrabajo { get; set; }
+        [Display(Name = "Antiguedad laboral en meses")]
         public int AntiguedadLaboral { get; set; }
+        [Display(Name = "Direccion Laboral")]
         public string DireccionLaboral { get; set; }
     }
 }
