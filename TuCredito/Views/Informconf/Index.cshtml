@@ -1,0 +1,53 @@
+﻿@model IEnumerable<TuCredito.Models.Informconf>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Clientes en Inforconf</h2>
+
+<p>
+    @Html.ActionLink("Agregar Cliente", "Create")
+</p>
+<table class="table table-striped table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RazonSocial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Informconf1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Faja)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RazonSocial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Informconf1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Faja)
+        </td>
+     
+    </tr>
+}
+
+</table>

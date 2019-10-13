@@ -29,7 +29,12 @@
                     @if (Request.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Listado de Clientes", "Index", "Cliente")</li>
+                        <li>@Html.ActionLink("Moneda", "Index", "Moneda")</li>
+                        <li>@Html.ActionLink("Informconf", "Index", "Informconf")</li>
                     }
+
+                
+
 
                 </ul>
                 @Html.Partial("_LoginPartial")
