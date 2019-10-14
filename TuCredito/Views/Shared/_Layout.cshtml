@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -28,12 +28,32 @@
                     <li>@Html.ActionLink("Nosotres", "Nosotres", "Home")</li>
                     @if (Request.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Listado de Clientes", "Index", "Cliente")</li>
-                        <li>@Html.ActionLink("Moneda", "Index", "Moneda")</li>
-                        <li>@Html.ActionLink("Informconf", "Index", "Informconf")</li>
+                        <li class="dropdown open">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
+                                Reportes <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>@Html.ActionLink("Listado de Clientes", "Index", "Cliente")</li>
+                                <li>@Html.ActionLink("Informconf", "Index", "Informconf")</li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown open">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
+                                Modificaciones <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                
+                                <li>@Html.ActionLink("Moneda", "Index", "Moneda")</li>
+
+                            </ul>
+                        </li>
+
+                       
+
                     }
 
-                
+
 
 
                 </ul>
