@@ -26,6 +26,7 @@
                     <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
                     <li>@Html.ActionLink("Contacto", "Create", "Comentarios")</li>
                     <li>@Html.ActionLink("Nosotres", "Nosotres", "Home")</li>
+                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
                     @if (Request.IsAuthenticated)
                     {
                         <li class="dropdown open">
@@ -43,13 +44,13 @@
                                 Modificaciones <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-                                
+
                                 <li>@Html.ActionLink("Moneda", "Index", "Moneda")</li>
 
                             </ul>
                         </li>
 
-                       
+
 
                     }
 
